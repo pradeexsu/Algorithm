@@ -6,7 +6,7 @@ const int total = 1e3+1;
 typedef tuple<int,int,int> ti3;
 int parent[total];
 int ranks[total];
-ti3 edges[total];
+ti3 edges[total*total/2];
 
 void init(int n){
 	for (int i=0; i< n; i++){
