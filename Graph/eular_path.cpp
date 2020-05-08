@@ -70,3 +70,6 @@ int main() {
     func();
     return 0;
 }
+
+//     output :
+//     2 -> 1 -> 4 -> 2 -> 3 -> 4 :
