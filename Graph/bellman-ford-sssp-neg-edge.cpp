@@ -27,9 +27,11 @@ vector<int> bellman_ford(int src, vector<pair<int,int> > G[], int n)
 	{
 		if (dist[u] == inf)
 				continue;				
-		for (auto edge: G[u]){
+		for (auto edge: G[u])
+		{
 			tie(v, w) = edge;
-			if (dist[v] > dist[u]+w){
+			if (dist[v] > dist[u]+w)
+			{
 				//Negetive cycle detected !!
 				dist.clear();
 // 				assert(0);
