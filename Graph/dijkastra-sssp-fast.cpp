@@ -1,23 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> dijkstra(int n,int source, vector<pair<int, int> > G[]) {
+vector<int> dijkstra(int n,int source, vector<pair<int, int> > G[]) 
+{
     int INF = (int)1e9;
     vector<int> D(n, INF);
     D[source] = 0;
     set<pair<int, int> > Q;
-    Q.insert({0,source});
-    while(!Q.empty())   {
+    Q.insert({0, source});
+    
+    while (not Q.empty())   
+    {
         auto top = Q.begin();
         int u = top->second;
         Q.erase(top);
-        for(auto next: G[u])    {
+        for (auto next: G[u])    
+        {
             int v = next.first, weight = next.second;
-            if( D[u] + weight < D[v] ) {
-                if(Q.find( {D[v],v})!=Q.end())
+            if (D[u]+weight < D[v] ) 
+            {
+                if (Q.find( {D[v], v}) != Q.end())
                     Q.erase(Q.find( {D[v], v} ));
-                D[v] = D[u] + weight;
-                Q.insert( {D[v], v} );
+                D[v] = D[u]+weight;
+                Q.insert({D[v], v});
             }
         }
     }
