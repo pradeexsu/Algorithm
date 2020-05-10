@@ -29,18 +29,20 @@ vector<int> dijkstra(int n,int source, vector<pair<int, int> > G[])
     return D;
 }
 
-int main(){
+int main()
+{
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-    int n,m,s,x,y,z,t;
-    cin>>t;
-    while(t--)
+    int n, m, s, x, y, z, t;
+    cin >> t;
+    while (t--)
     {
-        cin>>n>>m; 
-        vector<pair<int,int> > *G=new vector<pair<int,int> >[n+1];
-        vector<int>ans;
-        for(int i=0;i<m;i++){
-            cin>>x>>y>>z;
+        cin >> n >> m; 
+        vector<pair<int, int> > *G = new vector<pair<int, int> >[n+1];
+        vector<int> ans;
+        for (int i=0; i<m; i++)
+        {
+            cin >> x >> y >> z;
             G[x].push_back(make_pair(y,z));
             G[y].push_back(make_pair(x,z));
         }
