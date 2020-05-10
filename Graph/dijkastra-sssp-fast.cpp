@@ -46,13 +46,14 @@ int main()
             G[x].push_back(make_pair(y,z));
             G[y].push_back(make_pair(x,z));
         }
-        cin>>s;
-        ans = dijkstra(n+1,s,G);
-        for(int i=1;i<=n;i++){
-            if(i==s)
+        cin >> s;
+        ans = dijkstra(n+1, s, G);
+        for (int i=1; i<=n; i++)
+        {
+            if (i==s)
                 continue;
-            else if(ans[i]==1e9)
-                cout<<"-1 ";
+            else if (ans[i]==1e9)
+                cout << "-1 ";
             else
                 cout<<ans[i]<<" ";
         }
