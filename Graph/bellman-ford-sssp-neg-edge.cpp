@@ -1,25 +1,27 @@
 						//directed edges
 #include<bits/stdc++.h>
 #define fast ios_base::sync_with_stdio(0);cin.tie(0);
-#define inf 0xffffff
+#define inf 0xfffffff
 using namespace std;
 
-vector<int> bellman_ford(int src, vector<pair<int,int> > G[], int n){
-	vector<int> dist(n+1,inf);
+vector<int> bellman_ford(int src, vector<pair<int,int> > G[], int n)
+{
+	vector<int> dist(n+1, inf);
 	dist[src] = 0;
-	int v,w;
-	for (int i=0; i<n-1; i++){
-		for (int u=1; u<=n; u++){
-
+	int v, w;
+	for (int i=0; i<n-1; i++)
+	{
+		for (int u=1; u<=n; u++)
+		{
 			if (dist[u] == inf)
 				continue;				
-			for (auto edge: G[u]){
-				tie(v,w) = edge;
+			for (auto edge: G[u])
+			{
+				tie(v, w) = edge;
 				dist[v] = min(dist[v], dist[u] + w);
 			}
 		}
 	}
-	
 	//for detecting negetive cycle in graph  *optional
 	for (int u=1; u<=n; u++){
 		if (dist[u] == inf)
