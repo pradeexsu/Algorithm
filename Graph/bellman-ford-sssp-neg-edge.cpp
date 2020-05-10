@@ -41,22 +41,24 @@ vector<int> bellman_ford(int src, vector<pair<int,int> > G[], int n)
 	return dist;
 }
 
-int main(){
+int main()
+{
 	int n, w, x, y, e, s;
-	cout<<"input: ";
-	cin>>n>>e;
-	vector<pair<int,int> > *g = new vector<pair<int,int> >[n+1]; 
+	cout << "input: ";
+	cin >> n >> e;
+	vector<pair<int, int> > *g = new vector<pair<int, int> >[n+1]; 
 
-	for(int i=0; i<e; i++){
-		cin>>x>>y>>w;
+	for (int i=0; i<e; i++)
+	{
+		cin >> x >> y >> w;
 		g[x].push_back({y, w});
 		g[y].push_back({x, w});
 	}
-	cin>>s;
-	cout<<"output: \n";
-	auto dist = bellman_ford(s,g,n);
-	for (int i=1;i<n;i++)
-		cout<<dist[i]<<' ';
+	cin >> s;
+	cout << "output: \n";
+	auto dist = bellman_ford(s, g, n);
+	for (int i=1; i<n; i++)
+		cout << dist[i] << ' ';
 	delete[] g;
 	return 0;
 }
