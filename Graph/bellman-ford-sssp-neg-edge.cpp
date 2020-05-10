@@ -18,20 +18,21 @@ vector<int> bellman_ford(int src, vector<pair<int,int> > G[], int n)
 			for (auto edge: G[u])
 			{
 				tie(v, w) = edge;
-				dist[v] = min(dist[v], dist[u] + w);
+				dist[v] = min(dist[v], dist[u]+w);
 			}
 		}
 	}
 	//for detecting negetive cycle in graph  *optional
-	for (int u=1; u<=n; u++){
+	for (int u=1; u<=n; u++)
+	{
 		if (dist[u] == inf)
 				continue;				
 		for (auto edge: G[u]){
-			tie(v,w) = edge;
-			if (dist[v]> dist[u] + w){
+			tie(v, w) = edge;
+			if (dist[v] > dist[u]+w){
 				//Negetive cycle detected !!
 				dist.clear();
-				assert(0);
+// 				assert(0);
 			}
 		}
 	}
@@ -39,16 +40,15 @@ vector<int> bellman_ford(int src, vector<pair<int,int> > G[], int n)
 }
 
 int main(){
-	int n,w,x,y,e,s;
+	int n, w, x, y, e, s;
 	cout<<"input: ";
 	cin>>n>>e;
-
 	vector<pair<int,int> > *g = new vector<pair<int,int> >[n+1]; 
-	
+
 	for(int i=0; i<e; i++){
 		cin>>x>>y>>w;
-		g[x].push_back({y,w});
-		g[y].push_back({x,w});
+		g[x].push_back({y, w});
+		g[y].push_back({x, w});
 	}
 	cin>>s;
 	cout<<"output: \n";
