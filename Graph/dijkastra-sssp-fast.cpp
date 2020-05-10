@@ -55,9 +55,9 @@ int main()
             else if (ans[i]==1e9)
                 cout << "-1 ";
             else
-                cout<<ans[i]<<" ";
+                cout << ans[i] << " ";
         }
-        delete[] G;
-        cout<<'\n';
+        delete [] G;
+        cout << '\n';
     }
 }
