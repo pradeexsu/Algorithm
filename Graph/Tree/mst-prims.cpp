@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 #include <bitset>
-#define fast ios_base::sync_with_stdio(0);cin.tie(0);
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);
 using namespace std;
 const int total = 3e3+2;
 bitset<total> marked;
@@ -36,7 +36,7 @@ int main()
  
     for (int i=0; i<e; i++)
     {
-        cin>>x>>y>>w;
+        cin >> x >> y >> w;
         edjList[x].insert({w, y});
         edjList[y].insert({w, x});
     }
