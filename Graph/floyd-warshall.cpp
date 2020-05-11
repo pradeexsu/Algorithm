@@ -25,11 +25,13 @@ int main()
     cin>>n>>e;
 
     int G[n][400];
-    for (int i=0; i<n; i++){
+    for (int i=0; i<n; i++)
+    {
         fill_n(G[i],n,inf);
         G[i][i] = 0;
     }
-    for (int i=0; i<e; i++){
+    for (int i=0; i<e; i++)
+    {
         cin>>x>>y>>w;
         G[x-1][y-1] = w;
     }
@@ -38,9 +40,10 @@ int main()
     cin>>q;
     // cout<<"output: \n";
     floyd_warshall(G,n);
-    for (int i=0; i<q; i++){
+    for (int i=0; i<q; i++)
+    {
         cin>>x>>y;
-        if(G[x-1][y-1]==inf)
+        if (G[x-1][y-1]==inf)
             cout<<"-1\n";
         else
             cout<<G[x-1][y-1]<<'\n';
