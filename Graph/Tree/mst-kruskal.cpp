@@ -23,29 +23,34 @@ int find(int v)
 	return parent[v] = find(parent[v]);
 }
 
-void union_set(int a, int b){
+void union_set(int a, int b)
+{
 	a = find(a);
 	b = find(b);
-	if(a!=b){
-		if(ranks[a]<ranks[b]){
+	if (a!=b)
+	{
+		if (ranks[a]<ranks[b])
+		{
 			swap(a, b);
 		}
 		parent[b] = a;
-		if(ranks[a]==ranks[b])
-		ranks[a]++;
+		if (ranks[a]==ranks[b])
+			ranks[a]++;
 	}
 }
 
-int kruskal(int n){
+int kruskal(int n)
+{
 	
 	int mst = 0, w, x, y;
 	sort(edges, edges+n);
-	for (int i=0;i<n;i++){
+	for (int i=0; i<n; i++){
 		tie(w,x,y) = edges[i];
 		x = find(x);
 		y = find(y);
 		
-		if(x != y){
+		if (x != y)
+		{
 			mst += w;
 			union_set(x, y);
 		}
@@ -53,7 +58,8 @@ int kruskal(int n){
 	return mst;
 }
 
-int main(){
+int main()
+{
 	int n, e, w, x, y;
 	cin>>n>>e;
 	init(n);
