@@ -89,7 +89,8 @@ void run()
 		cout<<"\n";
 	}
 }
-int main(){
+int main()
+{
 	fast
 	run();	
 	return 0;
