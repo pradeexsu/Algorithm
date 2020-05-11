@@ -7,7 +7,8 @@ bitset<total> marked;
 typedef pair<int,int> pi2;
 set<pi2>edjList[total];
 
-int prims(int src){
+int prims(int src)
+{
     int mst = 0, w, x;
     priority_queue< pi2, vector<pi2>, greater<pi2> > edgeQ;
     edgeQ.push({0,src});
@@ -18,7 +19,8 @@ int prims(int src){
             continue;
         mst+= w;
         marked[x] = true;
-        for(auto node: edjList[x]){
+        for(auto node: edjList[x])
+        {
             if(not marked[node.second])
                 edgeQ.push(node);
         }
@@ -26,11 +28,13 @@ int prims(int src){
     return mst;
 }
 
-int main(){
+int main()
+{
     int n, w,x,y,e;
     cin>>n>>e;
  
-    for(int i=0; i<e; i++){
+    for(int i=0; i<e; i++)
+    {
         cin>>x>>y>>w;
         edjList[x].insert({w, y});
         edjList[y].insert({w, x});
