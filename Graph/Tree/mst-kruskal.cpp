@@ -69,7 +69,6 @@ int main()
 		cin >> w >> x >> y;
 		edges[i] = tie(w, x, y);
 	}
-	cout<<kruskal(e)<<'\n';
-	
+	cout << kruskal(e) << '\n';
 	return 0;
 }
