@@ -12,12 +12,13 @@ int prims(int src)
     int mst = 0, w, x;
     priority_queue< pi2, vector<pi2>, greater<pi2> > edgeQ;
     edgeQ.push({0,src});
-    while(not edgeQ.empty()){
+    while (not edgeQ.empty())
+    {
         tie(w, x) = edgeQ.top();
         edgeQ.pop();
-        if(marked[x])
+        if (marked[x])
             continue;
-        mst+= w;
+        mst += w;
         marked[x] = true;
         for(auto node: edjList[x])
         {
