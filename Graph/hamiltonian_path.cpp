@@ -82,7 +82,8 @@ void run()
 	g.add_edj(3,4);
 	
 	auto ans = g.hemiltonian_path();
-	for (auto &i: ans){
+	for (auto &i: ans)
+	{
 		for (int j: i)
 			cout<<j<<" ";
 		cout<<"\n";
