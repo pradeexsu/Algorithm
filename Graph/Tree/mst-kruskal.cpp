@@ -61,11 +61,11 @@ int kruskal(int n)
 int main()
 {
 	int n, e, w, x, y;
-	cin>>n>>e;
+	cin >> n >> e;
 	init(n);
 
-	for(int i=0; i<e; i++){
-		cin>>w>>x>>y;
+	for (int i=0; i<e; i++){
+		cin >> w >> x >> y;
 		edges[i] = tie(w, x, y);
 	}
 	cout<<kruskal(e)<<'\n';
