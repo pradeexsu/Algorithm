@@ -44,7 +44,8 @@ struct Graph
 		vector<vector<int> > ans;
 		vector<int> path;
 		visited.reset();
-		for (int i=1; i<=n; i++){
+		for (int i=1; i<=n; i++)
+		{
 			visited[i] = 1;
 			path.push_back(i);
 			permute_path(i, path, ans);
