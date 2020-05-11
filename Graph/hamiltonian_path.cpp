@@ -14,7 +14,8 @@ struct Graph
 		edj_list = new set<int>[v+1];
 	}
 	
-	void add_edj(int u, int v, bool bidir=true){
+	void add_edj(int u, int v, bool bidir=true)
+	{
 		edj_list[u].insert(v);
 		if(bidir)
 			edj_list[v].insert(u);
