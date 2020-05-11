@@ -8,7 +8,8 @@ struct Graph
 {
 	set<int> *edj_list;
 	int n;
-	Graph(int v){
+	Graph(int v)
+	{
 		this->n = v;
 		edj_list = new set<int>[v+1];
 	}
