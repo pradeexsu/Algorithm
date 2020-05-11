@@ -25,10 +25,11 @@ struct Graph
 	{
 		for (auto edj: edj_list[v])
 		{
-			if(not visited[edj]){
+			if (not visited[edj])
+			{
 				visited[edj] = 1;
 				path.push_back(edj);
-				if(path.size() == (size_t)n)
+				if (path.size() == (size_t)n)
 					ans.push_back(path);
 				else
 					permute_path(edj,path,ans);
