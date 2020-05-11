@@ -1,20 +1,23 @@
 #include<bits/stdc++.h>
-#define fast ios_base::sync_with_stdio(0);cin.tie(0);
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);
 #define ll long long 
 using namespace std;
 const int total = 1e3+1;
-typedef tuple<int,int,int> ti3;
+typedef tuple<int, int, int> ti3;
 int parent[total];
 int ranks[total];
 ti3 edges[total*total/2];
 
-void init(int n){
-	for (int i=0; i< n; i++){
+void init(int n)
+{
+	for (int i=0; i< n; i++)
+	{
 		parent[i] = i;
 		ranks[i] = 0;
 	}
 }
-int find(int v){
+int find(int v)
+{
 	if(parent[v]==v)
 		return v;
 	return parent[v] = find(parent[v]);
