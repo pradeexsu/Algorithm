@@ -42,7 +42,7 @@ int main()
     }
     int root;
     cin >> root;
-    int ans = prims(root);
-    cout << ans;
+    int mst_cost = prims(root);
+    cout << mst_cost;
     return 0;
 }
