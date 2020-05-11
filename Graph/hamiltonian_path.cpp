@@ -17,13 +17,13 @@ struct Graph
 	void add_edj(int u, int v, bool bidir=true)
 	{
 		edj_list[u].insert(v);
-		if(bidir)
+		if (bidir)
 			edj_list[v].insert(u);
 	}
 	
 	void permute_path(int v, vector<int> &path, vector<vector<int>> &ans)
 	{
-		for(auto edj:edj_list[v]){
+		for (auto edj: edj_list[v]){
 			if(not visited[edj]){
 				visited[edj] = 1;
 				path.push_back(edj);
