@@ -4,7 +4,8 @@
 using namespace std;
 bitset<10002> visited;
 
-struct Graph{
+struct Graph
+{
 	set<int> *edj_list;
 	int n;
 	Graph(int v){
