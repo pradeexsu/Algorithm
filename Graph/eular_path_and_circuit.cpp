@@ -58,7 +58,8 @@ struct Graph
 
 };
 
-void func(){
+void func()
+{
     Graph graph(5);
     graph.add_edj(1,2);
     graph.add_edj(1,3);
@@ -78,7 +79,7 @@ void func(){
     // this function return true if eular circuit is exist else false
     bool eular_circuit_exist = graph.eular_path2(2); 
     std::cout<<'\n';
-    if(eular_circuit_exist)
+    if (eular_circuit_exist)
         std::cout<<"eular circuit exist\n";
     else
         std::cout<<"eular circuit not exist\n";
@@ -86,7 +87,8 @@ void func(){
     
 }
 
-void func2(){
+void func2()
+{
     Graph graph(4);
     /*
      1--------2
@@ -104,7 +106,8 @@ void func2(){
 
 }
 
-int main() {
+int main() 
+{
 
     func();
     func2();
@@ -116,5 +119,3 @@ int main() {
 
 // eular circuit exist
 // 2 -> 1 -> 4 -> 2 -> 3 -> 4 :
-
-
