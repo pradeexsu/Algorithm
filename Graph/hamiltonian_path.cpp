@@ -21,7 +21,8 @@ struct Graph
 			edj_list[v].insert(u);
 	}
 	
-	void permute_path(int v, vector<int> &path, vector<vector<int>> &ans){
+	void permute_path(int v, vector<int> &path, vector<vector<int>> &ans)
+	{
 		for(auto edj:edj_list[v]){
 			if(not visited[edj]){
 				visited[edj] = 1;
