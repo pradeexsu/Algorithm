@@ -39,7 +39,8 @@ struct Graph
 		}
 	}
 
-	vector<vector<int>> hemiltonian_path(){
+	vector<vector<int>> hemiltonian_path()
+	{
 		vector<vector<int> > ans;
 		vector<int> path;
 		visited.reset();
