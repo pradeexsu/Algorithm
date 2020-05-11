@@ -9,7 +9,7 @@ set<pi2>edjList[total];
 
 int prims(int src)
 {
-    int mst = 0, w, x;
+    int mst_cost = 0, w, x;
     priority_queue< pi2, vector<pi2>, greater<pi2> > edgeQ;
     edgeQ.push({0,src});
     while (not edgeQ.empty())
@@ -18,7 +18,7 @@ int prims(int src)
         edgeQ.pop();
         if (marked[x])
             continue;
-        mst += w;
+        mst_cost += w;
         marked[x] = true;
         for (auto node: edjList[x])
         {
@@ -26,7 +26,7 @@ int prims(int src)
                 edgeQ.push(node);
         }
     }
-    return mst;
+    return mst_cost;
 }
 
 int main()
