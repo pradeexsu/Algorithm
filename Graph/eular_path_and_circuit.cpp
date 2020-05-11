@@ -41,7 +41,8 @@ struct Graph
     {
         int first = u, last;
         while(true){
-            if (edj_list[u].empty()){
+            if (edj_list[u].empty())
+            {
                 std::cout << u << " :\n";
                 last = u;
                 break;
