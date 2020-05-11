@@ -18,7 +18,8 @@ struct Graph
         edj_list[u].insert(v);
     }
 
-    void remove_edj(int u, int v){
+    void remove_edj(int u, int v)
+    {
         edj_list[v].erase(u);
         edj_list[u].erase(v);
     }
