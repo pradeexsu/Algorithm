@@ -20,9 +20,9 @@ int prims(int src)
             continue;
         mst += w;
         marked[x] = true;
-        for(auto node: edjList[x])
+        for (auto node: edjList[x])
         {
-            if(not marked[node.second])
+            if (not marked[node.second])
                 edgeQ.push(node);
         }
     }
@@ -31,18 +31,18 @@ int prims(int src)
 
 int main()
 {
-    int n, w,x,y,e;
-    cin>>n>>e;
+    int n, w, x, y, e;
+    cin >> n >> e;
  
-    for(int i=0; i<e; i++)
+    for (int i=0; i<e; i++)
     {
         cin>>x>>y>>w;
         edjList[x].insert({w, y});
         edjList[y].insert({w, x});
     }
     int root;
-    cin>>root;
+    cin >> root;
     int ans = prims(root);
-    cout<<ans;
+    cout << ans;
     return 0;
 }
