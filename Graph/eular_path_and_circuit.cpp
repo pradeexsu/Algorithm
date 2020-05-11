@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 #include <algorithm>
 
-struct Graph{
+struct Graph
+{
     int v;
     std::set<int> *edj_list;
     
