@@ -6,12 +6,14 @@ struct Graph
     int v;
     std::set<int> *edj_list;
     
-    Graph(int n){
+    Graph(int n)
+    {
         int v = n+1;
         edj_list = new std::set<int>[n+1];
 
     }
-    void add_edj(int v, int u){
+    void add_edj(int v, int u)
+    {
         edj_list[v].insert(u);
         edj_list[u].insert(v);
     }
