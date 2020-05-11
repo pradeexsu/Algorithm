@@ -55,7 +55,8 @@ struct Graph
 	}
 
 };
-void run(){
+void run()
+{
 	Graph g(4);
 	/*		
 	    1
