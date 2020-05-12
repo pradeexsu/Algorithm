@@ -26,7 +26,7 @@ vector<int> bellman_ford(int src, vector<pair<int,int> > G[], int n)
 	for (int u=1; u<=n; u++)
 	{
 		if (dist[u] == inf)
-				continue;				
+			continue;				
 		for (auto edge: G[u])
 		{
 			tie(v, w) = edge;
@@ -57,6 +57,12 @@ int main()
 	cin >> s;
 	cout << "output: \n";
 	auto dist = bellman_ford(s, g, n);
+	if (dist.size()==0)
+	{		
+		cout<<"graph contain negetive cycle ";
+		delete[] g;
+		return 0;
+	}
 	for (int i=1; i<n; i++)
 		cout << dist[i] << ' ';
 	delete[] g;
