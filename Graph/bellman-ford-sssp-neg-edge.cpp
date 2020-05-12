@@ -1,6 +1,6 @@
 						//directed edges
 #include<bits/stdc++.h>
-#define fast ios_base::sync_with_stdio(0);cin.tie(0);
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);
 #define inf 0xfffffff
 using namespace std;
 
@@ -43,6 +43,7 @@ vector<int> bellman_ford(int src, vector<pair<int,int> > G[], int n)
 
 int main()
 {
+	fast
 	int n, w, x, y, e, s;
 	cout << "input: ";
 	cin >> n >> e;
@@ -59,7 +60,7 @@ int main()
 	auto dist = bellman_ford(s, g, n);
 	if (dist.size()==0)
 	{		
-		cout<<"graph contain negetive cycle ";
+		cout << "graph contain negetive cycle ";
 		delete[] g;
 		return 0;
 	}
