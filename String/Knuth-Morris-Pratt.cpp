@@ -16,7 +16,7 @@ vector<int> matches;
 
 void KMP()
 {
-    for (int i=0;i<m;i++) 
+    for (int i=0; i<m; i++) 
         P[i] = -1;
     
     for (int i=0, j=-1;i<m;)
@@ -48,8 +48,10 @@ int main()
     haystack = "abcabc";
     needle = "bc";
     KMP();
+    
     for (int i=0; i<matches.size(); i++) 
        printf("%d ", matches[i]);
+
     printf("\n");
     
     return 0;
