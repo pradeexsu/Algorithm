@@ -3,10 +3,9 @@
 #define ll long long 
 using namespace std;
 const int total = 1e3+1;
-typedef tuple<int, int, int> ti3;
+
 int parent[total];
 int ranks[total];
-ti3 edges[total*total/2];
 
 void init(int n)
 {
@@ -16,6 +15,7 @@ void init(int n)
 		ranks[i] = 0;
 	}
 }
+
 int find(int v)
 {
 	if(parent[v]==v)
@@ -38,37 +38,7 @@ void union_set(int a, int b)
 			ranks[a]++;
 	}
 }
-
-int kruskal(int n)
+bool is_union(int u, int v)
 {
-	
-	int mst = 0, w, x, y;
-	sort(edges, edges+n);
-	for (int i=0; i<n; i++){
-		tie(w,x,y) = edges[i];
-		x = find(x);
-		y = find(y);
-		
-		if (x != y)
-		{
-			mst += w;
-			union_set(x, y);
-		}
-	}
-	return mst;
-}
-
-int main()
-{
-	int n, e, w, x, y;
-	cin >> n >> e;
-	init(n);
-
-	for (int i=0; i<e; i++)
-	{
-		cin >> w >> x >> y;
-		edges[i] = tie(w, x, y);
-	}
-	cout << kruskal(e) << '\n';
-	return 0;
+	return find(u)==find(v);
 }
