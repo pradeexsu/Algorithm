@@ -1,9 +1,8 @@
 #include<bits/stdc++.h>
 #define fast ios_base::sync_with_stdio(0); cin.tie(0);
-#define ll long long 
+#define ll long long
 using namespace std;
 const int total = 1e3+1;
-
 int parent[total];
 int ranks[total];
 
@@ -38,6 +37,7 @@ void union_set(int a, int b)
 			ranks[a]++;
 	}
 }
+
 bool is_union(int u, int v)
 {
 	return find(u)==find(v);
