@@ -1,11 +1,12 @@
 #include<bits/stdc++.h>
-#define fast ios_base::sync_with_stdio(0);cin.tie(0);
-#define inf 0xffffff
+#define fast ios_base::sync_with_stdio(0); cin.tie(0);
+#define inf 0xffffffff
 using namespace std;
 #define unordered_map unordered_map
 
 template<typename T>
-struct Graph{
+struct Graph
+{
 	unordered_map<T, list<pair<T, int> > > edj_list;
 	
 	void add_edge(T u, T v, int dist, bool bidir = true){
@@ -20,17 +21,17 @@ struct Graph{
 			dist[i.first] = inf;
 		}
 		
-		set<pair<int,T> > Que;
+		set<pair<int, T> > Que;
 		
 		dist[src] = 0;
-		Que.insert({0,src});
+		Que.insert({0, src});
 		int w;
 		T node;
 		while(not Que.empty()){
-			tie(w,node) = *Que.begin();
+			tie(w, node) = *Que.begin();
 			Que.erase(Que.begin());
 			
-			for (auto &nbr:edj_list[node]){
+			for (auto &nbr: edj_list[node]){
 				
 				if( dist[nbr.first] > dist[node] + nbr.second){
 					auto iter = Que.find( {dist[node], nbr.first} );
@@ -43,23 +44,25 @@ struct Graph{
 			}
 		}
 		for (auto i: dist){
-			cout << i.first<<" : "<< i.second<<'\n';
+			cout << i.first << " : " << i.second << '\n';
 		}
 	}
 
 };
 
 
-int main(){
-	int n,w,x,y,e;
+int main()
+{
+	int n, w, x, y, e;
 	Graph<int> *g = new Graph<int>(); 
-	cout<<"input: ";
-	cin>>n>>e;
-	for(int i=0; i<e; i++){
-		cin>>x>>y>>w;
-		g->add_edge(x,y,w);
+	cout << "input: ";
+	cin >> n >> e;
+	for (int i=0; i<e; i++)
+	{
+		cin >> x >> y >> w;
+		g->add_edge(x, y, w);
 	}
-	cout<<"output: \n";
+	cout << "output: \n";
 	g->dijkastra(1);
 	return 0;
 }
