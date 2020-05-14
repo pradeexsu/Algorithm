@@ -98,11 +98,11 @@ void func2()
          4--------3
     */
 
-    graph.add_edj(1,2);
-    graph.add_edj(1,4);
-    graph.add_edj(2,4);
-    graph.add_edj(2,3);
-    graph.add_edj(3,4);
+    graph.add_edj(1, 2);
+    graph.add_edj(1, 4);
+    graph.add_edj(2, 4);
+    graph.add_edj(2, 3);
+    graph.add_edj(3, 4);
     graph.eular_path2(2); 
 
 }
