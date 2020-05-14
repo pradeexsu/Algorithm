@@ -9,15 +9,18 @@ struct Graph
 {
 	unordered_map<T, list<pair<T, int> > > edj_list;
 	
-	void add_edge(T u, T v, int dist, bool bidir = true){
+	void add_edge(T u, T v, int dist, bool bidir = true)
+	{
 		edj_list[u].push_back({v, dist});
-		if(bidir)
+		if (bidir)
 			edj_list[v].push_back({u, dist});
 	}
 	
-	void dijkastra(T src){
+	void dijkastra(T src)
+	{
 		unordered_map<T, int> dist;
-		for (auto &i:edj_list){
+		for (auto &i: edj_list)
+		{
 			dist[i.first] = inf;
 		}
 		
@@ -27,7 +30,8 @@ struct Graph
 		Que.insert({0, src});
 		int w;
 		T node;
-		while(not Que.empty()){
+		while(not Que.empty())
+		{
 			tie(w, node) = *Que.begin();
 			Que.erase(Que.begin());
 			
