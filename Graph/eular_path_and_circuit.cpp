@@ -26,21 +26,22 @@ struct Graph
 
     void eular_path(int u)
     {
-        if(edj_list[u].empty())
+        if (edj_list[u].empty())
         {
-            std::cout<<u<<" :";
+            std::cout << u << " :";
             return;
         }
         int v = *edj_list[u].begin();
-        std::cout << u <<" -> ";
-        remove_edj(v,u);
+        std::cout << u << " -> ";
+        remove_edj(v, u);
         eular_path(v);
     }
 
     bool eular_path2(int u)
     {
         int first = u, last;
-        while(true){
+        while (true)
+        {
             if (edj_list[u].empty())
             {
                 std::cout << u << " :\n";
@@ -49,10 +50,10 @@ struct Graph
             }
             int v = *edj_list[u].begin();
             std::cout << u <<" -> ";
-            remove_edj(v,u);
+            remove_edj(v, u);
             u = v;
         }
-        return first==last;
+        return first == last;
     }
 
 
