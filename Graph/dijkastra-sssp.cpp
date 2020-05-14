@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 #define fast ios_base::sync_with_stdio(0); cin.tie(0);
 #define inf 0xffffffff
+
 using namespace std;
-#define unordered_map unordered_map
 
 template<typename T>
 struct Graph
