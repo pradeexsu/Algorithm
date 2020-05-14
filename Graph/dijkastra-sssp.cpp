@@ -35,9 +35,11 @@ struct Graph
 			tie(w, node) = *Que.begin();
 			Que.erase(Que.begin());
 			
-			for (auto &nbr: edj_list[node]){
+			for (auto &nbr: edj_list[node])
+			{
 				
-				if( dist[nbr.first] > dist[node] + nbr.second){
+				if( dist[nbr.first] > dist[node] + nbr.second)
+				{
 					auto iter = Que.find( {dist[node], nbr.first} );
 					if(iter != Que.end())
 						Que.erase(iter);
@@ -47,7 +49,8 @@ struct Graph
 				}
 			}
 		}
-		for (auto i: dist){
+		for (auto i: dist)
+		{
 			cout << i.first << " : " << i.second << '\n';
 		}
 	}
