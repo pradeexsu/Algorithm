@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <vector>
 #define MAX_N 1001
 using namespace std;
 typedef long long lld;
