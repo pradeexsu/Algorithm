@@ -93,8 +93,8 @@ int main()
 {
 
     CRT crt({2, 3, 2},{3, 5, 7});
-
     std::cout<< crt.getAns()<<"\n";
 //    std::cout<< run(773);
     return 0;
+
 }
