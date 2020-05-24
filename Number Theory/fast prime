@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <bitset>
+using namespace std;
+const int n = int(86028125);
+bitset<n+1> p;
+int primes[5000102], k;
+/*
+void fastscan(int &x)
+    {
+        bool neg=false;
+        register int c;
+        x =0;
+        c=getchar();
+        if(c=='-')
+        {
+            neg = true;
+            c=getchar();
+        }
+        for(;(c>47 && c<58);c=getchar())
+            x = (x<<1) + (x<<3) +c -48;
+        if(neg)
+            x *=-1;
+}
+*/    
+void fastscan(int &x)
+{
+        bool neg=false;
+        char c;
+        x = 0;
+        while(' '==(c=getchar()));
+        if(c=='-')
+        {
+            neg = true;
+            c=getchar();
+        }
+        for(;(c>47 && c<58);c=getchar())
+            x = (x<<1) + (x<<3) +c -48;
+        if(neg)
+            x *=-1;
+    }
+    
+void sive(){
+	k=2;
+	primes[1] = 2;
+    for (int i=3; i<n; i+=2){
+        if(!p[i]){
+            primes[k++]=i;
+            for (long long j = i*(long long)i; j<n; j += 2*i)
+                p[j] = 1;
+        }
+    }
+}
+
+int main() {
+    int t, nn;
+    sive();
+    //scanf("%d",&t);
+    fastscan(t);
+    //printf("%d\n\n",t);
+    while(t--){
+        //scanf("%d", &nn);
+        fastscan(nn);   
+        printf("%d\n",primes[nn]);
+    }
+	return 0;
+}
