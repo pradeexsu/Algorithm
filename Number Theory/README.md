@@ -10,3 +10,6 @@ codeforeces
 Segmented sive :
 prime Genrator Spoj
 ## https://ide.codingblocks.com/s/241007
+
+## LDE
+### https://ide.codingblocks.com/s/327161
