@@ -5,3 +5,5 @@ ford-fulkerson algos
 
 expand the pond from hacker blocks
 #### https://ide.codingblocks.com/s/337947
+detect cycle in uduwg, bipartite graph, cycle detection in uduw graph
+#### https://ide.codingblocks.com/s/337957
